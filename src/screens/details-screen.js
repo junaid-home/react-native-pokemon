@@ -2,6 +2,7 @@ import * as React from 'react'
 import PropTypes from 'prop-types'
 import { StyleSheet, ImageBackground } from 'react-native'
 import PokemonDetailsView from '../components/pokemon-details-view'
+import NoInternet from '../components/no-net'
 import Loader from '../components/loader'
 import useApi from '../hooks/useApi'
 
@@ -37,6 +38,7 @@ export default function DetailsPage({ route }) {
       source={require('../assets/background.jpg')}
     >
       <Screen style={styles.container}>
+        <NoInternet />
         {pokimonData ? <PokemonDetailsView data={pokimonData} /> : <Loader visible />}
       </Screen>
     </ImageBackground>

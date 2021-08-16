@@ -8,14 +8,20 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import SearchIconButton from '../search-navigation-button'
 import HomeNavigator from '../../navigation/home-navigator'
 import SearchScreen from '../../screens/search-screen'
-import PopularScreen from '../../screens/popular-screen'
+import AddNewScreen from '../../screens/add-new-screen'
 
 const Tab = createBottomTabNavigator()
 
 export default function App() {
   return (
     <NavigationContainer>
-      <Tab.Navigator>
+      <Tab.Navigator
+        screenOptions={{
+          headerStyle: { backgroundColor: 'orangered' },
+          headerTintColor: 'white',
+          tabBarActiveTintColor: 'orangered',
+        }}
+      >
         <Tab.Screen
           options={{
             headerShown: false,
@@ -28,6 +34,7 @@ export default function App() {
         />
         <Tab.Screen
           options={({ navigation }) => ({
+            title: 'Search Pokemon',
             tabBarButton: () => (
               <SearchIconButton onPress={() => navigation.navigate('Search')} />
             ),
@@ -37,12 +44,13 @@ export default function App() {
         />
         <Tab.Screen
           options={{
+            title: 'Add Pokemon',
             tabBarIcon: ({ color, size }) => {
               return <Entypo name="add-to-list" size={size} color={color} />
             },
           }}
           name="Upload"
-          component={PopularScreen}
+          component={AddNewScreen}
         />
       </Tab.Navigator>
     </NavigationContainer>

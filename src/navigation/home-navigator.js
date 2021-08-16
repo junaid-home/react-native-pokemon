@@ -7,7 +7,12 @@ const Stack = createStackNavigator()
 
 export default function HomeStackNavigator() {
   return (
-    <Stack.Navigator>
+    <Stack.Navigator
+      screenOptions={{
+        headerStyle: { backgroundColor: 'orangered' },
+        headerTintColor: 'white',
+      }}
+    >
       <Stack.Screen options={{ headerShown: false }} name="Feed" component={HomeScreen} />
       <Stack.Screen name="Pokemon Details" component={DetailsScreen} />
     </Stack.Navigator>

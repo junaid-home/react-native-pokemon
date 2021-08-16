@@ -13,11 +13,13 @@ function __getAllDetails(results) {
 
 export const getPokemonData = async (nextPage = '/pokemon?offset=0&limit=20') => {
   const pokemons = await api.get(nextPage)
-  if (pokemons.ok)
+  if (pokemons.ok) {
     return {
+      ok: pokemons.ok,
       nextPage: pokemons.data.next.replace('https://pokeapi.co/api/v2', ''),
       results: await __getAllDetails(pokemons.data.results),
     }
+  } else return { ok: pokemons.ok }
 }
 
 export const getPokemonDetails = async (name) => {

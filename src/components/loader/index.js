@@ -8,7 +8,12 @@ export default function Loader({ visible = false }) {
 
   return (
     <View style={styles.overlay}>
-      <LottieView autoPlay loop source={require('../../assets/animations/loader.json')} />
+      <LottieView
+        autoPlay
+        style={{ height: '40%', width: '40%' }}
+        loop
+        source={require('../../assets/animations/loader.json')}
+      />
     </View>
   )
 }
@@ -19,6 +24,9 @@ Loader.propTypes = {
 
 const styles = StyleSheet.create({
   overlay: {
+    position: 'relative',
+    top: '40%',
+    left: '38%',
     height: '100%',
     width: '100%',
     zIndex: 1,
