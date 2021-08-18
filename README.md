@@ -7,11 +7,11 @@ After that follow the below steps to get pokemon app up and running!
 
 ### [ STEP 1 ] clone the project
 ```bash
-git clone https://github.com/junaid-home/react-native-pokemon.git
+git clone https://github.com/junaid-home/react-native-pokemon.git <name>
 ```
 ### [ STEP 2 ] navigate to the project directory and install dependencies
 ```bash
-cd react-native-pokemon
+cd <name>
 npm install
 ```
 ### [ STEP 3 ] start development 
