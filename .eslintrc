@@ -13,6 +13,6 @@
   },
   "plugins": ["react", "react-native"],
   "rules": {
-    "no-console": "warn"
+    "no-console": "off"
   }
 }
